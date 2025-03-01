@@ -10,14 +10,16 @@ public class Sorteador {
         }
 
         while (numeroSorteado < 100) {
+            Aleatorio numero = new Aleatorio();
 
-            int numeroGerado = sorteadorDeNumeros();
+            int numeroGerado = numero.sorteadorDeNumeros(1,100);
+
 
             int bilhetePremiado = 10;
 
             String premioMaior = "Parabéns seu bilhete é o premiado, você ganhou 100 reais de desconto em nossa loja";
 
-            System.out.println("O número sorteado foi : "+ numeroGerado);
+            System.out.println("O número sorteado foi : " + numeroGerado);
 
 
             if (numeroSorteado == numeroGerado) {
@@ -32,10 +34,6 @@ public class Sorteador {
                 break;
             }
         }
-    }
-
-    private int sorteadorDeNumeros() {
-        return ThreadLocalRandom.current().nextInt(1, 101);
     }
 
 
