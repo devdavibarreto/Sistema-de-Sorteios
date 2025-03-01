@@ -1,3 +1,5 @@
+import java.util.Locale;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Sorteador {
@@ -9,10 +11,11 @@ public class Sorteador {
             System.out.println("Apenas números de 1 aa 100");
         }
 
+
         while (numeroSorteado < 100) {
             Aleatorio numero = new Aleatorio();
 
-            int numeroGerado = numero.sorteadorDeNumeros(1,100);
+            int numeroGerado = numero.sorteadorDeNumeros(1, 100);
 
 
             int bilhetePremiado = 10;
@@ -31,8 +34,19 @@ public class Sorteador {
                 break;
             } else {
                 System.out.println("Não foi dessa vez tente novamente");
+
+                Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+
+                System.out.println("Qual o número do sorteio que deseja adquirir : ");
+
+                int numeroDoUsuario = scanner.nextInt();
+
+                sorteador(numeroDoUsuario);
+
                 break;
             }
+
+
         }
     }
 
