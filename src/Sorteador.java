@@ -6,17 +6,17 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Sorteador {
 
     public void sorteador(int numeroSorteado) {
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
-
-            if (numeroSorteado > 100) {
+            if (numeroSorteado > 101) {
                 System.out.println("Apenas números de 1 aa 100");
             }
 
 
-            while (numeroSorteado < 100) {
+            while (numeroSorteado < 101) {
                 Aleatorio numero = new Aleatorio();
 
-                int numeroGerado = numero.sorteadorDeNumeros(1, 100);
+                int numeroGerado = numero.sorteadorDeNumeros(1, 101);
 
 
                 int bilhetePremiado = 10;
@@ -28,6 +28,12 @@ public class Sorteador {
 
                 if (numeroSorteado == numeroGerado) {
                     System.out.println("🙌 WIIIIN !! Você ganhou um vale compras de R$ 20.00");
+
+                    System.out.println("Qual o número do sorteio que deseja adquirir : ");
+
+                    int numeroDoUsuarioo = scanner.nextInt();
+
+                    sorteador(numeroDoUsuarioo);
                     break;
                 } else if (numeroSorteado == numeroGerado & numeroGerado ==
                         bilhetePremiado) {
@@ -36,7 +42,7 @@ public class Sorteador {
                 } else {
                     System.out.println("Não foi dessa vez tente novamente");
 
-                    Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+
 
                     System.out.println("Qual o número do sorteio que deseja adquirir : ");
 
